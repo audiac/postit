@@ -17,9 +17,11 @@
   </div>
 
   <div class='control-group'>
-    <%= label('post', 'Categories') %>
-    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
-      <% category.label(class: 'checkbox inline') { category.check_box(class: 'checkbox') + category.text } %>
+    <%= f.label('Categories') %>
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id,
+      :name) do |category| %>
+      <% category.label(class: 'checkbox inline') { category.check_box(class: 
+        'checkbox') + category.text } %>
     <% end %>
   </div>
 
