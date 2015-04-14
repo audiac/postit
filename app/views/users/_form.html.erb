@@ -1,16 +1,18 @@
-<%= form_for @user do |f| %>
-  <%= render 'shared/errors', object: @user %>
+<div class='well'>
+  <%= form_for @user do |f| %>
+    <%= render 'shared/errors', object: @user %>
 
-  <div class='control-group'>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
+    <div class='control-group'>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
 
-  <div class='control-group'>
-    <%= f.label :password %>
-    <%= f.text_field :password %>
-  </div>
+    <div class='control-group'>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
 
-  <%= f.submit 'Create Account', class: 'btn btn-primary' %>
+    <%= f.submit 'Create Account', class: 'btn btn-success' %>
 
-<% end %>
+  <% end %>
+</div>
