@@ -12,7 +12,7 @@
       <%= f.password_field :password %>
     </div>
 
-    <%= f.submit 'Create Account', class: 'btn btn-success' %>
+    <%= f.submit @user.new_record? ? 'Create Account' : 'Update Profile', class: 'btn btn-success' %>
 
   <% end %>
 </div>
