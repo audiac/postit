@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+
+  after_validation :generate_slug
+
   belongs_to :creator, foreign_key: 'user_id', class_name: 'User'
   has_many :comments
   has_many :post_categories
@@ -20,4 +23,13 @@ class Post < ActiveRecord::Base
   def down_votes
     self.votes.where(vote: false).count
   end
+
+  def generate_slug
+    self.slug = self.title.gsub(' ', '-').downcase
+  end
+
+  def to_param
+    self.slug
+  end
+
 end
