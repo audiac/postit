@@ -8,7 +8,7 @@
       <% end %>
     <br>
     <% end %>
-    <span id='comment_<%= comment.id %>_votes'><%= comment.total_votes %></span> Votes
+    <span id='comment_<%= comment.to_param %>_votes'><%= comment.total_votes %></span> Votes
     <br>
     <% if logged_in? %>
       <%= link_to vote_post_comment_path(comment.post, comment, vote: false), method: 'post', remote: true do %>
