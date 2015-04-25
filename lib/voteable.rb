@@ -1,20 +1,20 @@
-module Voteable
-  extend ActiveSupport::Concern
+# module Voteable
+#   extend ActiveSupport::Concern
 
-  included do
-    has_many :votes, as: :voteable
-  end
+#   included do
+#     has_many :votes, as: :voteable
+#   end
 
-  def total_votes
-    self.up_votes - self.down_votes
-  end
+#   def total_votes
+#     self.up_votes - self.down_votes
+#   end
 
-  def up_votes
-    self.votes.where(vote: true).count
-  end
+#   def up_votes
+#     self.votes.where(vote: true).count
+#   end
 
-  def down_votes
-    self.votes.where(vote: false).count
-  end
+#   def down_votes
+#     self.votes.where(vote: false).count
+#   end
 
-end
+# end
