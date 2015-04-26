@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+
   before_action :set_user, only: [:show, :edit, :update]
   before_action :require_same_user, only: [:edit, :update]
+
   def new
     @user = User.new
   end
@@ -48,4 +50,5 @@ class UsersController < ApplicationController
         redirect_to root_path
       end
     end
+
 end
